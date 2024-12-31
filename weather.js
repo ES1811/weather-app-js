@@ -41,7 +41,7 @@ function Weather() {
     } else if (weather.condition === "Rain" && weather.cloudiness > 75) {
         warning.textContent = "Heavy rain incoming, better stay at home";
         warning.classList.add("heavy-rain");
-        warning.classList.remove("extreme-heat", "extreme-cold", "heavy-rain", "overcast")
+        warning.classList.remove("extreme-heat", "extreme-cold", "severe-storm", "overcast")
     } else if (weather.condition === "Cloudy" && weather.cloudiness > 90) {
         warning.textContent = "Rain incoming, grab an umbrella";
         warning.classList.add("overcast");
