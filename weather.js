@@ -24,8 +24,30 @@ function Weather() {
     let warning = document.getElementById("warning");
     if (weather.condition === "Snow" && weather.temperature < -10) {
         warning.textContent = "Stay at home kids :)";
+        warning.classList.add("extreme-cold");
+        warning.classList.remove("extreme-heat", "severe-storm", "heavy-rain", "overcast")
+    } else if (weather.temperature < -10) {
+        warning.textContent = "It's freezing outside, better stay at home";
+        warning.classList.add("extreme-cold");
+        warning.classList.remove("extreme-heat", "severe-storm", "heavy-rain", "overcast")
+    } else if (weather.temperature > 35) {
+        warning.textContent = "Stay hydrated kids :)";
+        warning.classList.add("extreme-heat");
+        warning.classList.remove("extreme-cold", "severe-storm", "heavy-rain", "overcast")
+    } else if (weather.condition === "Storm" && weather.cloudiness > 80) {
+        warning.textContent = "Big storm, better stay at home";
+        warning.classList.add("severe-storm");
+        warning.classList.remove("extreme-heat", "extreme-cold", "heavy-rain", "overcast")
+    } else if (weather.condition === "Rain" && weather.cloudiness > 75) {
+        warning.textContent = "Heavy rain incoming, better stay at home";
+        warning.classList.add("heavy-rain");
+        warning.classList.remove("extreme-heat", "extreme-cold", "heavy-rain", "overcast")
+    } else if (weather.condition === "Cloudy" && weather.cloudiness > 90) {
+        warning.textContent = "Rain incoming, grab an umbrella";
+        warning.classList.add("overcast");
+        warning.classList.remove("extreme-heat", "severe-storm", "heavy-rain", "extreme-cold")
     } else {
-        warning.textContent = "";
+        warning.textContent = ""; //no warnings for normal weather conditions
     }
 
     //time to prevent having weird weather conditions with weird temps (like snow with 40ºC)

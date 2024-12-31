@@ -22,3 +22,22 @@ h2 {
     margin-bottom: 40px;
 }
 
+.extreme-cold {
+    color: rgb(150, 197, 241);
+}
+
+.extreme-heat {
+    color: orange;
+}
+
+.severe-storm {
+    color: darkblue;
+}
+
+.heavy-rain {
+    color: darkblue;
+}
+
+.overcast {
+    color: darkgray;
+}
